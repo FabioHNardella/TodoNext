@@ -1,7 +1,4 @@
 package br.todonext.todonext.Service;
-
-import br.todonext.todonext.DTO.TaskRequestDTO;
-import br.todonext.todonext.Entity.Task;
 import br.todonext.todonext.Repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,11 +8,14 @@ public class TaskService {
     @Autowired
     private TaskRepository repository;
 
-    //Create
+    //Create - 201
 
-    //Read
 
-    //Update
+    //Read - 200
 
-    //Delete
+    //Update - 200 = OK | 204 = NO CONTENT
+
+    //Delete - 200
+
+    // 404 - Not found
 }
