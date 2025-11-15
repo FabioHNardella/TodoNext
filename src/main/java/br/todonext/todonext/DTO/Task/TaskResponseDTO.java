@@ -1,9 +1,8 @@
-package br.todonext.todonext.DTO;
+package br.todonext.todonext.DTO.Task;
 
 import br.todonext.todonext.Enum.CheckboxStatus;
 import br.todonext.todonext.Enum.TaskStatus;
 import br.todonext.todonext.Enum.TaskType;
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.LocalDateTime;
 

@@ -4,9 +4,13 @@ import br.todonext.todonext.Enum.TaskStatus;
 import br.todonext.todonext.Enum.CheckboxStatus;
 import br.todonext.todonext.Enum.TaskType;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 public class Task {
 
@@ -50,84 +54,4 @@ public class Task {
         this.creationDate = creationDate;
     }
 
-
-    public long getId() {
-        return id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public TaskType getType() {
-        return type;
-    }
-
-    public void setType(TaskType type) {
-        this.type = type;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public LocalDateTime getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDateTime updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public LocalDateTime getEndingDate() {
-        return endingDate;
-    }
-
-    public void setEndingDate(LocalDateTime endingDate) {
-        this.endingDate = endingDate;
-    }
-
-    public TaskStatus getTaskStatus() {
-        return taskStatus;
-    }
-
-    public void setTaskStatus(TaskStatus taskStatus) {
-        this.taskStatus = taskStatus;
-    }
-
-    public CheckboxStatus getCheckboxStatus() {
-        return checkboxStatus;
-    }
-
-    public void setCheckboxStatus(CheckboxStatus checkboxStatus) {
-        this.checkboxStatus = checkboxStatus;
-    }
-
-    public boolean isLocked() {
-        return isLocked;
-    }
-
-    public void setLocked(boolean locked) {
-        isLocked = locked;
-    }
 }

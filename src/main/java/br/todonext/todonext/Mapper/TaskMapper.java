@@ -1,7 +1,7 @@
 package br.todonext.todonext.Mapper;
 
-import br.todonext.todonext.DTO.TaskRequestDTO;
-import br.todonext.todonext.DTO.TaskResponseDTO;
+import br.todonext.todonext.DTO.Task.TaskRequestDTO;
+import br.todonext.todonext.DTO.Task.TaskResponseDTO;
 import br.todonext.todonext.Entity.Task;
 import br.todonext.todonext.Entity.User;
 import br.todonext.todonext.Enum.TaskStatus;
