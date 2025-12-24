@@ -4,35 +4,54 @@ import br.todonext.todonext.Enum.TaskStatus;
 import br.todonext.todonext.Enum.CheckboxStatus;
 import br.todonext.todonext.Enum.TaskType;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "task_id")
+    @Column(name = "task_id", nullable = false)
     private long id;
 
-    @Column(name = "task_type")
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @Column(name = "task_type", nullable = false)
     private TaskType type;
 
-    @Column(name = "task_title")
+    @Column(name = "task_title", nullable = false)
     private String title;
 
     @Column(name = "task_description")
     private String description;
 
-    @Column(name = "task_creation_date")
-    private Date creationDate;
+    @Column(name = "task_creation_date", nullable = false, updatable = false)
+    private final LocalDateTime creationDate;
+
+    @Column(name = "task_updated_date")
+    private LocalDateTime updatedDate;
 
     @Column(name = "task_ending_date")
-    private Date endingDate;
+    private LocalDateTime endingDate;
 
-    @Column(name = "task_status")
+    @Column(name = "task_status", nullable = false)
     private TaskStatus taskStatus;
 
-    @Column(name = "task_checkbox_status")
+    @Column(name = "task_checkbox_status", nullable = false)
     private CheckboxStatus checkboxStatus;
+
+    @Column(name = "is_Locked", nullable = false)
+    private boolean isLocked;
+
+    public Task(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
+
 }
